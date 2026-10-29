@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator Bangun Ruang (jQuery)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Kalkulator Bangun Ruang</h1>
+      <p>Pilih bangun ruang lalu isi ukurannya. Hasil langsung muncul saat kamu mengetik.</p>
+    </header>
+
+    <!-- Tombol pilihan bangun (diisi oleh script.js) -->
+    <nav id="daftarBangun" class="daftar-bangun" aria-label="Pilih bangun ruang"></nav>
+
+    <section class="kartu" id="kartuForm">
+      <h2 id="judulBangun"></h2>
+      <p id="rumusBangun" class="rumus"></p>
+
+      <form id="formHitung" novalidate>
+        <div id="kolomInput" class="kolom-input"></div>
+        <div class="aksi">
+          <button type="submit" id="tombolHitung" class="tombol utama" disabled>Tampilkan di alert</button>
+          <button type="button" id="tombolReset" class="tombol">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Hasil real-time -->
+    <section class="kartu hasil" id="areaHasil" aria-live="polite">
+      <h2>Hasil</h2>
+      <div class="hasil-grid">
+        <div class="angka-hasil">
+          <span class="label">Volume</span>
+          <strong><span id="angkaVolume">–</span> <small>satuan³</small></strong>
+        </div>
+        <div class="angka-hasil">
+          <span class="label">Luas permukaan</span>
+          <strong><span id="angkaLuas">–</span> <small>satuan²</small></strong>
+        </div>
+      </div>
+      <p id="teksHasil">Isi semua ukuran untuk melihat hasil.</p>
+    </section>
+  </main>
+
+  <!-- jQuery harus dimuat SEBELUM script.js -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
